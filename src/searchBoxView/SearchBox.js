@@ -1,9 +1,16 @@
-import React from 'react'
+import React , { useState } from 'react'
 import Header from '../components/common/Header'
 
-const SearchBox = () => {
+const  SearchBox = () => {
+  
+
+
+
+
   return (
-    <div><Header></Header></div>
+    <div>
+      <Header></Header>
+    </div>
   )
 }
 
