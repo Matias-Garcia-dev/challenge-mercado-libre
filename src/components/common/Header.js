@@ -12,7 +12,7 @@ const Header = () => {
     const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=:${searchTerm}`);
     const data = await response.json();
     if(data.results.length !== 0 && searchTerm !== '') {
-      navigate(`/items?search=${searchTerm}` , {state:{data:data.results , url:searchTerm}})
+      navigate(`/items?search=${searchTerm}` , {state:{data:data.results}})
     } else {
       navigate('/')
     }
