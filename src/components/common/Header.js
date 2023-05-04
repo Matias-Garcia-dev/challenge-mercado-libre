@@ -5,15 +5,17 @@ import search from "../../assets/ic_Search.png";
 import style from "./header.module.css";
 
 const Header = () => {
-  const [searchTerm, setSearchTerm] = useState();
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-
+ 
   const handleSearchClick = async () => {
     const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=:${searchTerm}`);
     const data = await response.json();
-    setSearchResults(data.results);
-    navigate('/result' , {state:{data:data.results}})
+    if(data.results.length !== 0 && searchTerm !== '') {
+      navigate(`/items?search=${searchTerm}` , {state:{data:data.results , url:searchTerm}})
+    } else {
+      navigate('/')
+    }
   };
 
 

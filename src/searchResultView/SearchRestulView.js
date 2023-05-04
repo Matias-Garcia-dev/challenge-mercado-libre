@@ -1,14 +1,15 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
 import Header from '../components/common/Header'
 import { useLocation } from 'react-router-dom';
 
-const SearchRestulView = () => {
+const SearchRestulView = ({item}) => {
     const data = useLocation()
-    console.log("data de result",data.state)
     const [searchResultsList, setSearchResultsList] = useState([]);
+    console.log("result succes")
   return (
     <div>
-        <Header></Header>
+      
+      <button></button>
         {data.state.data[0].id}
     </div>
   )
