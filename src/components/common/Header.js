@@ -6,16 +6,19 @@ import style from "./header.module.css";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [items, setItems] = useState([]);
   const navigate = useNavigate();
  
   const handleSearchClick = async () => {
-    const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=:${searchTerm}`);
+    const response = await fetch(`http://localhost:3001/api/items?q=${searchTerm}`);
     const data = await response.json();
-    if(data.results.length !== 0 && searchTerm !== '') {
-      navigate(`/items?search=${searchTerm}` , {state:{data:data.results}})
+    setItems(data.items);
+    console.log("items result", data)
+     if(data.items && searchTerm !== '') {
+      navigate(`/items?search=${searchTerm}` , {state:{data:data.items }})
     } else {
       navigate('/')
-    }
+    } 
   };
 
 
