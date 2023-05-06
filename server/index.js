@@ -6,7 +6,6 @@ const cors = require("cors");
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-console.log("Base URL = " + process.env.PORT);
 
 app.use(express.static(__dirname + "/public"));
 app.use(morgan("dev"));
@@ -36,20 +35,28 @@ app.get("/api/items", async (req, res) => {
   const api = await fetchAPI();
 
   const getCategories = async (data) => {  // make a new fetch to get the Categories form the fisrt item 
-    if (data.results[0].category_id) {
-      const resultCategories = await fetch(
-        process.env.CATEGORIES_URL + data.results[0].category_id
-      );
-      const infoCategories = await resultCategories.json();
-
-      return infoCategories.path_from_root;
-    } else {
-      const resultCategories = await fetch(
-        process.env.CATEGORIES_URL + data.available_filters[0].values[0].id
-      );
-      const infoCategories = await resultCategories.json();
-      return infoCategories.path_from_root;
+    if (data.results[0]) {
+      try{
+        if (data.results[0].category_id) {
+          const resultCategories = await fetch(
+            process.env.CATEGORIES_URL + data.results[0].category_id
+          );
+          const infoCategories = await resultCategories.json();
+    
+          return infoCategories.path_from_root;
+        } else {
+          const resultCategories = await fetch(
+            process.env.CATEGORIES_URL + data.available_filters[0].values[0].id
+          );
+          const infoCategories = await resultCategories.json();
+          return infoCategories.path_from_root;
+        }
+      } catch (error) {
+        console.error(error);
+          res.status(500).send("Error fetching categories");
+      }
     }
+    return
   };
 
   const getItems = (data) => { // function to get the item data in the correct format 

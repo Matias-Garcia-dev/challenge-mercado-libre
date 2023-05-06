@@ -2,3 +2,9 @@
     display: flex;
     justify-content: center;
 }
+.listContainer {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+
+}

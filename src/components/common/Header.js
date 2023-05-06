@@ -10,15 +10,17 @@ const Header = () => {
   const navigate = useNavigate();
  
   const handleSearchClick = async () => {
+   if ( searchTerm ) {
     const response = await fetch(`http://localhost:3001/api/items?q=${searchTerm}`);
     const data = await response.json();
     setItems(data.items);
-    console.log("items result", data)
-     if(data.items && searchTerm !== '') {
-      navigate(`/items?search=${searchTerm}` , {state:{data:data.items }})
+     if(data.items.length > 0) {
+      return navigate(`/items?search=${searchTerm}` , {state:{dataApi:data }})
     } else {
-      navigate('/')
+       return navigate('/')
     } 
+   }
+   return navigate('/')
   };
 
 

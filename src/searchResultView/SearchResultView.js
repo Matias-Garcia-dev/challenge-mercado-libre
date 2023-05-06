@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/common/Header";
+import Card from "../components/card/Card";
 import { useLocation } from "react-router-dom";
 import style from "./searchResultView.module.css"
+import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 
 const SearchRestulView = () => {
-  const data = useLocation();
-  console.log(data);
+  const dataApi = useLocation();
+  console.log(dataApi)
   return (
     <div className={style.mainContainer}>
-      <button></button>
-      {data.state.data[0].id}
+      <div className={style.listContainer}>
+      <Breadcrumb apiCategorieInfo={dataApi.state.dataApi.categories}></Breadcrumb>
+        <button></button>
+        {dataApi.state.dataApi.items[0].id}
+
+        <Card></Card>
+      </div>
     </div>
   );
 };
