@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Mercado Libre Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a coding challenge for the Mercado Libre company. It is a simple search interface for the Mercado Libre API, which displays the search results and allows the user to view the details of a selected product.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1. Clone the repository to your local machine:
 
-### `npm start`
+   ```
+   git clone https://github.com/your-username/mercado-libre-challenge.git
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigate to the project directory:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```
+   cd mercado-libre-challenge
+   ```
 
-### `npm test`
+3. Install the dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   npm install
+   ```
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To start the development server, navigate to the `server` directory and run the following command:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd server
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will start the server on port 5000.
 
-### `npm run eject`
+To start the React app, open a new terminal window, navigate to the project directory, and run the following command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will start the app on port 3000 and open it in your default browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project is divided into two main directories: `client` and `server`.
 
-## Learn More
+### Client
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `client` directory contains the React app, which is responsible for rendering the search interface and displaying the search results.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The main components of the app are:
 
-### Code Splitting
+- `App`: The root component of the app. It contains the search bar and the routing logic.
+- `SearchResults`: A component that displays the search results.
+- `ProductDetails`: A component that displays the details of a selected product.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Server
 
-### Analyzing the Bundle Size
+The `server` directory contains a simple Express server, which acts as a proxy for the Mercado Libre API. The server is responsible for making requests to the API on behalf of the client, and returning the results.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The server has the following endpoints:
 
-### Making a Progressive Web App
+- `/api/items?q={query}`: Returns a list of search results for the given query.
+- `/api/items/:id`: Returns the details of the product with the given ID.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Credits
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was created by [Your Name Here] for the Mercado Libre Challenge.

@@ -1,0 +1,18 @@
+.mainDetailContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.breadcrumbAndCardConainer {
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    padding-left: 25px;
+    height: 100%;
+    margin-bottom: 200px;
+}
+.detailContainer {
+    border-radius: 4px;
+    background-color: var(--white);
+    height: 900px;
+}

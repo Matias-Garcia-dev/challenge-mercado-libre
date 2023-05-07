@@ -1,0 +1,18 @@
+.list {
+    display: flex;
+    list-style-type: none;
+    padding: 16px 0px 16px 0px;
+    margin: 0;
+}
+.arrrowIamge {
+    width: 6px;
+    filter: contrast(0);
+    margin-right: 8px;
+}
+
+.anchorBreadcrumb {
+    text-decoration: none;
+    color: var(--darkgrey);
+  margin-right: 8px;
+  font-size: 14px;
+}

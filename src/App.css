@@ -1,3 +1,16 @@
+:root {
+  --yellow: #FFE600;
+  --grey_Background: #EEEEEE;
+  --white: #fff;
+  --darkgrey: #666666;
+  --grey: #999999;
+  --blue: #3483FA;
+}
+
+
+body {
+  background-color: var(--grey_Background);
+}
 .App {
   text-align: center;
 }

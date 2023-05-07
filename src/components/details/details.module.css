@@ -1,0 +1,53 @@
+.picture {
+    width: 100%;
+    max-width: 680px;
+}
+.descritionTextContainer {
+    max-width: 680px;
+    padding-left: 32px;
+}
+.descriptionTitle {
+    font-size: 28px;
+    padding-bottom: 32px;
+    margin: 0;
+}
+.descriptionText {
+    font-size: 16px;
+    padding-bottom: 32px;
+    color: var(--grey)
+}
+.detailMainContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    padding-right: 32px;
+}
+.soldQuantity {
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.titleDetial {
+    margin: 0;
+    font-weight: 700;
+    padding-bottom: 32px;
+    font-size: 24px;
+}
+.price {
+    margin: 0;
+    font-weight: normal;
+    font-size: 46px;
+    padding-bottom: 32px;
+}
+.buttonComprar {
+    background-color: var(--blue);
+    border: 0px;
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 18px;
+}

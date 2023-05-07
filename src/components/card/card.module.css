@@ -1,0 +1,47 @@
+.mainContainerCard {
+    display: flex;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+.imageCard {
+    height: 180px;
+    width: 180px;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.textContentCard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    align-content: flex-start;
+}
+
+.freeShippinIcon {
+    width: 18px;
+    height: 18px;
+}
+
+.priceAndLocationText {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: normal;
+}
+.titleText {
+    margin: 0;
+    font-size: 18px;
+}
+.locationText {
+    font-size: 12px;
+    color: var(--darkgrey);
+    display: flex;
+    align-items: flex-end;
+    padding-right: 40px;
+}
