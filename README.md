@@ -13,7 +13,7 @@ This project is a coding challenge for the Mercado Libre company. It is a simple
 2. Navigate to the project directory:
 
    ```
-   cd mercado-libre-challenge
+   cd Challenge-mercado-libre
    ```
 
 3. Install the dependencies:
@@ -66,4 +66,4 @@ The server has the following endpoints:
 
 ## Credits
 
-This project was created by [Your Name Here] for the Mercado Libre Challenge.
+This project was created by [Matias Garcia] for the Mercado Libre Challenge.
