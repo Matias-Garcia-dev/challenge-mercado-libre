@@ -5,16 +5,16 @@ import style from "./searchResultView.module.css"
 import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 
 const SearchRestulView = () => {
-  const dataApi = useLocation();
-  console.log(dataApi)
+  const data = useLocation();
+  console.log(data)
   return (
     <div className={style.mainContainer}>
       <div className={style.listContainer}>
-      <Breadcrumb apiCategorieInfo={dataApi.state.dataApi.categories}></Breadcrumb>
-        <button></button>
-        {dataApi.state.dataApi.items[0].id}
-
-        <Card></Card>
+      <Breadcrumb apiCategorieInfo={data.state.dataApi.categories}></Breadcrumb>
+      {data.state.dataApi.items.map((items, index) => {
+        return (<Card items={items}></Card>)
+      })}
+        
       </div>
     </div>
   );

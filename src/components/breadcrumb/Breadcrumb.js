@@ -10,7 +10,7 @@ const Breadcrumb = ({apiCategorieInfo}) => {
         return (
           <li >
             {index > 0 && (<img className={style.arrrowIamge} src={chevronRight} alt=''/>)}
-            <a href='#A'>{category.name}</a> 
+            <a className={style.anchorBreadcrumb} href='javascript:void(0)'>{category.name}</a> 
             </li>
         )
       })}
