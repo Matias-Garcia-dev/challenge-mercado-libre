@@ -7,7 +7,7 @@ This project is a coding challenge for the Mercado Libre company. It is a simple
 1. Clone the repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/mercado-libre-challenge.git
+   git clone https://github.com/Matias-Garcia-dev/challenge-mercado-libre.git
    ```
 
 2. Navigate to the project directory:
