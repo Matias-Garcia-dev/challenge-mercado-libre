@@ -6,7 +6,7 @@ import Breadcrumb from "../components/breadcrumb/Breadcrumb";
 
 const SearchRestulView = () => {
   const data = useLocation();
-  console.log(data)
+
   return (
     <div className={style.mainContainer}>
       <div className={style.listContainer}>
@@ -14,7 +14,7 @@ const SearchRestulView = () => {
       <div className={style.cardContainer}>
         {data.state.dataApi.items.slice(0, 4).map((items, index) => {
           return (
-            <Link key={index} className={style.linkCard}>
+            <Link key={index} className={style.linkCard}  to={{ pathname: `/items/${items.id}` }} state={{ dataResult: items , categories: data.state.dataApi.categories}}>
               {index > 0 && <hr className={style.SeparatorCardline}></hr>}
               <Card items={items}></Card>
             </Link>

@@ -11,7 +11,6 @@ const Header = () => {
  
   const handleSearchClick = async () => {
    if ( searchTerm ) {
-    console.log(process.env.URL_EXPRESS_API_items)
     const response = await fetch(`http://localhost:3001/api/items?q=${searchTerm}`);
     const data = await response.json();
     setItems(data.items);

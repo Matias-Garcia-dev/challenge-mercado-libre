@@ -3,7 +3,6 @@ import style from './card.module.css'
 import FreeShppin from '../../assets/ic_shipping.png'
 
 const Card = ({items}) => {
-  console.log(items, "items card")
   return (
     <div className={style.mainContainerCard} >
       <img src={items.picture} alt={items.title} className={style.imageCard}/>

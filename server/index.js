@@ -95,6 +95,38 @@ app.get("/api/items", async (req, res) => {
   res.json(resultData);
 });
 
+app.get("/api/items/:id", async (req, res) => {
+  const itemId = req.params.id;
+
+  const fetchItemDatabyId = async () => {
+    const url = process.env.ITEMS_DETAILS_URL + itemId;
+    try {
+      const result = await fetch(url);
+      const data = await result.json();
+      return data;
+    } catch (error) {
+      console.error("error fetch item by id", error.message);
+    }
+  };
+
+  const fetchDescriptionbyId = async () => {
+    const url = process.env.ITEMS_DETAILS_URL + itemId + "/description";
+    try {
+      const result = await fetch(url);
+      const data = await result.json();
+      return data;
+    } catch (error) {
+      console.error("error fetch item by id", error.message);
+    }
+  };
+
+
+  const itemDataById = await fetchItemDatabyId();
+  const descriptionById = await fetchDescriptionbyId()
+  res.json(descriptionById);
+})
+
+
 app.listen(port, () => {
   console.log(`Servidor en línea en el puerto ${port}`);
 });
