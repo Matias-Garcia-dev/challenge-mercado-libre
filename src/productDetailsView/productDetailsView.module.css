@@ -14,4 +14,5 @@
 .detailContainer {
     border-radius: 4px;
     background-color: var(--white);
+    height: 900px;
 }

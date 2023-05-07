@@ -116,14 +116,39 @@ app.get("/api/items/:id", async (req, res) => {
       const data = await result.json();
       return data;
     } catch (error) {
-      console.error("error fetch item by id", error.message);
+      console.error("error fetch description by id", error.message);
     }
   };
 
 
   const itemDataById = await fetchItemDatabyId();
   const descriptionById = await fetchDescriptionbyId()
-  res.json(descriptionById);
+
+  const formatResult = {
+    id: itemDataById.id,
+    title: itemDataById.title,
+    price: {
+      currency: itemDataById.currency_id,
+      amount: itemDataById.price,
+      decimals: itemDataById.decimals,
+    },
+    picture: itemDataById.thumbnail,
+    condition: itemDataById.condition,
+    free_shipping: itemDataById.shipping.free_shipping,
+    sold_quantity: itemDataById.sold_quantity,
+    description: descriptionById.plain_text,
+  };
+
+  const author = {
+    name: "Matias",
+    lastname: "Garcia",
+  };
+  const resultData = {
+    author,
+    items: formatResult,
+  };
+
+  res.json(resultData);
 })
 
 
