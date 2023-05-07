@@ -6,9 +6,21 @@
 .listContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 800px;
+    width: 81%;
     padding-left: 25px;
     height: 100%;
+    margin-bottom: 200px;
+}
+.SeparatorCardline {
+    margin: 16px;
+    border-color: var(--grey_Background);
+}
 
+.cardContainer {
+    border-radius: 4px;
+    background-color: var(--white);
+}
+.linkCard {
+    text-decoration: none;
+    color: inherit;
 }

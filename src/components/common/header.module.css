@@ -9,13 +9,11 @@ header {
 
 .search_container {
     display: flex;
-    width: 100%;
-    max-width: 720px;
+    width: 75%;
     padding: 2px 2px 2px 24px;
 }
 .search_box {
     width: 100%;
-    max-width: 650px;
     border: 0px;
     padding: 11px 94px 10px 27px
 }
