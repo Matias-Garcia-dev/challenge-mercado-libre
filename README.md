@@ -31,7 +31,7 @@ cd server
 npm run dev
 ```
 
-This will start the server on port 5000.
+This will start the server on port 3001.
 
 To start the React app, open a new terminal window, navigate to the project directory, and run the following command:
 
